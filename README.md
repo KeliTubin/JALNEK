@@ -6,11 +6,7 @@ or
 npm i -g nodemon
 ```
 
-```
-
-``
-
-Nodemon run
+1.1 Nodemon run
 
 ```
 
@@ -41,7 +37,6 @@ yarn tsc --init
 yarn add ts-node --dev
 
 ```
-
 
 5 Node types
 
@@ -76,6 +71,7 @@ yarn add @types/express
 ```
 
 9 yarn install
+
 ```
 
 npm i yarn
@@ -95,6 +91,8 @@ yarn add typeorm
 ```
 
 yarn add mysql
+
+```
 
 ```
 
