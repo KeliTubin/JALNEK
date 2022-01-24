@@ -2,10 +2,12 @@
 
 ```
 yarn global add nodemon
+or
+npm i -g nodemon
 ```
 
 ```
-npm i -g nodemon
+
 ``
 
 Nodemon run
