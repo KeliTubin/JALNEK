@@ -15,5 +15,5 @@ yarn global add typescript
 
 tsc install
 ```
-yarn tsc init
+yarn tsc --init
 ```
