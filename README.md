@@ -80,4 +80,20 @@ npm i yarn
 
 ```
 
+10 TypeORM install
+
+```
+
+yarn add typeorm
+
+```
+
+```
+
+11 mySQL install
+
+```
+
+yarn add mysql
+
 ```
