@@ -4,6 +4,10 @@
 yarn global add nodemon
 ```
 
+```
+npm i yarn
+```
+
 Nodemon run
 
 ```
@@ -25,7 +29,11 @@ yarn tsc --init
 4 ts-node install
 
 ```
-yarn add  ts-node -dev
+yarn add  ts-node --dev
+```
+
+```
+npm i -g nodemon
 ```
 
 5 Node types
