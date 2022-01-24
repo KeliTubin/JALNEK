@@ -5,57 +5,79 @@ yarn global add nodemon
 ```
 
 ```
-npm i yarn
-```
+npm i -g nodemon
+``
 
 Nodemon run
 
 ```
+
 nodemon
+
 ```
 
 2 Typescript install
 
 ```
+
 yarn global add typescript
+
 ```
 
 3 tsc install
 
 ```
+
 yarn tsc --init
+
 ```
 
 4 ts-node install
 
 ```
-yarn add  ts-node --dev
-```
+
+yarn add ts-node --dev
 
 ```
-npm i -g nodemon
-```
+
 
 5 Node types
 
 ```
-yarn add  @types/node
+
+yarn add @types/node
+
 ```
 
 6 START SERVER
 
 ```
+
 yarn start
+
 ```
 
 7 yarn express
 
 ```
+
 yarn add express
+
 ```
 
 8 express types
 
 ```
+
 yarn add @types/express
+
+```
+
+9 yarn install
+```
+
+npm i yarn
+
+```
+
 ```
