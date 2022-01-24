@@ -1,6 +1,6 @@
-const http = require('http');
+import http from 'http';
 const server = http.createServer((req, res) =>{
-    res.statuscode = 200;
+    res.statusCode = 200;
     res.setHeader('content-Type', 'text/plain');
     res.end('Hello!');
 });
