@@ -93,7 +93,3 @@ yarn add typeorm
 yarn add mysql
 
 ```
-
-```
-
-```
