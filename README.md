@@ -110,10 +110,19 @@ yarn add uuid
 
 ```
 
-13 UUID types install
+14 UUID types install
 
 ```
 yarn add @types/uuid
+
+
+```
+
+BONUS! Creating line to SQL database blog
+
+```
+INSERT INTO user(id,firstName,middleName,lastName,mobile,email)
+VALUES('089ddda5-f4c8-4bca-974a-e69d616e504a','Jaanus','','Alnek','23423424','jaanus@test.ee');
 
 
 ```
