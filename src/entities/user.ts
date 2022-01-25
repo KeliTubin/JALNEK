@@ -2,6 +2,7 @@ import { Column, CreateDateColumn, Entity, getConnection, PrimaryGeneratedColumn
 
 @Entity()
 class User {
+    [x: string]: any;
     @PrimaryGeneratedColumn('uuid')
     id: string;
     @Column('varchar', {length: 150})
@@ -26,7 +27,7 @@ class User {
     updatedAT: Date;
 
     save(){
-        return getConnection().getRepository('User').save(this);
+        return getConnection().getRepository('User').findOne(this);
     }
 }
 // COLUMN (SULGUDE SEES) ON SEADISTUSED, MIS GENEREERITAKSE 

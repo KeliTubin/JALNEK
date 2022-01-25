@@ -51,3 +51,5 @@ router.post('/', async (req, res)=>{
     //     res.send({error 'Unable to create new user', message: error.message});
     // }
 });
+
+export default router; 

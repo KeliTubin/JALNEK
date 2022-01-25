@@ -1,4 +1,5 @@
 import express from 'express';
+import router from './routes/index';
 // import {Connection, ConnectionOptions, createConnection} from 'typeorm'
 const App = express();
 App.use(express.json());
@@ -24,7 +25,8 @@ App.use(express.json());
 // };
 // openDatabaseConnection()
 
-App.get('/users', async (req, res) =>{});
+// App.get('/users', async (req, res) =>{});
+App.use(router);
 App.get('/',(req, res)=>{
     res.json({message: 'Hello'});
 });
