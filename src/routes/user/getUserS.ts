@@ -5,15 +5,21 @@ const router = express.Router();
 
 router.get('/', async (req, res)=> {
     try{
-        const users = await User.find();
+        const {skip, take} = req.query;
+
+        const users = await User.find({
+            take: Number.isSafeInteger(take) ? Number.parseInt(take as string) : 20,
+            skip: Number.isSafeInteger(skip) ? Number.parseInt(skip as string) : 0
+        });
+
         if (!users){
-            return res.send({message: 'no user found given ID'});
+            return res.send({message: 'no users with given ID'});
         }
 
         return res.send(users);
     }   catch (error) {
         return res.send({
-            error: 'Unable to create new user',
+            error: 'VIGA getUserS.ts',
             message: error.message
         });
     }

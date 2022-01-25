@@ -118,11 +118,56 @@ yarn add @types/uuid
 
 ```
 
+15 JESTJS install (testing tool)
+
+```
+yarn add --dev jest
+
+
+```
+
+NB! You need install Jest extension in Visual Studio!
+
+16 JESTJS types install (testing tool)
+
+```
+yarn add @types/jest
+
+
+```
+
+17 JESTJS babel type install (testing tool)
+
+```
+yarn add @babel/preset-typescript --dev
+
+```
+
+```
+yarn add @babel/preset-env
+
+```
+
+18 Test file run with JEST (testing tool)
+
+```
+
+yarn jest test src/test
+
+```
+
+One file test only
+
+```
+
+yarn test -- src/test/sum
+
+```
+
 BONUS! Creating line to SQL database blog
 
 ```
 INSERT INTO user(id,firstName,middleName,lastName,mobile,email)
 VALUES('089ddda5-f4c8-4bca-974a-e69d616e504a','Jaanus','','Alnek','23423424','jaanus@test.ee');
-
 
 ```

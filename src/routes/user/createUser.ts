@@ -45,8 +45,8 @@ router.post('/', async (req, res)=>{
         }
         
         return res.send({
-            error: 'Unable to create new user',
-            message: 'VIGA createUser.ts'
+            error: 'VIGA createUser.ts',
+            message: error.message
         });
     }    
 });
