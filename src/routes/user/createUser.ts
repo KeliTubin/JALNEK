@@ -29,12 +29,25 @@ router.post('/', async (req, res)=>{
         user.email = email;
 
         let newUser = user.save();
-        if(!newUser){
-            throw new Error();
+    }   catch (error) {
+        if (error instanceof Error) {
+            return res.send({
+                error: 'Unable to create new user',
+                message: error.message
+            });
         }
-        res.send(newUser);
+        return res.send({
+            error: 'Unable to create new user',
+            message: 'unknown error'
+        });
     }
-    catch(error){
-        res.send({error 'Unable to create new user', message: error.message});
-    }
+    // )
+    //     if(!newUser){
+    //         throw new Error();
+    //     }
+    //     res.send(newUser);
+    // }
+    // catch(error){
+    //     res.send({error 'Unable to create new user', message: error.message});
+    // }
 });
