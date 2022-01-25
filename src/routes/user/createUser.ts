@@ -1,5 +1,6 @@
 import  express from 'express';
 import User from '../../entities/user';
+import uuid from 'uuid';
 const router = express.Router();
 
 interface UserInput {
@@ -22,34 +23,31 @@ router.post('/', async (req, res)=>{
 
         // User SUURE TÄHEGA TULI user.ts FAILIST class VÄÄRTUSELT
         const user = new User();
+        user.id = uuid.v4();
         user.firstName = firstName;
         user.middleName = middleName =! null ? middleName : '';
         user.lastName = lastName;
         user.mobile = mobile;
         user.email = email;
 
-        let newUser = user.save();
-    }   catch (error) {
+        let newUser = await user.save();
+        if(!newUser){
+            throw new Error();
+        }
+        return res.send(newUser);
+    }   catch(error){
         if (error instanceof Error) {
             return res.send({
-                error: 'Unable to create new user',
+                error: 'Unable to create new user', 
                 message: error.message
             });
         }
+        
         return res.send({
             error: 'Unable to create new user',
-            message: 'unknown error'
+            message: 'Unknown error'
         });
-    }
-    // )
-    //     if(!newUser){
-    //         throw new Error();
-    //     }
-    //     res.send(newUser);
-    // }
-    // catch(error){
-    //     res.send({error 'Unable to create new user', message: error.message});
-    // }
+    }    
 });
 
 export default router; 

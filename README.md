@@ -93,3 +93,27 @@ yarn add typeorm
 yarn add mysql
 
 ```
+
+12 Postman download
+
+```
+https://www.postman.com/downloads/
+
+
+```
+
+13 UUID install
+
+```
+yarn add uuid
+
+
+```
+
+13 UUID types install
+
+```
+yarn add @types/uuid
+
+
+```
