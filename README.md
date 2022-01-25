@@ -148,6 +148,13 @@ yarn add @babel/preset-env
 
 ```
 
+Babel messages remove from terminal
+
+```
+yarn add @babel/core@⌃7.0.0-0 --dev
+
+```
+
 18 Test file run with JEST (testing tool)
 
 ```
@@ -164,10 +171,20 @@ yarn test -- src/test/sum
 
 ```
 
+One file test only
+
+```
+
+yarn add axios
+
+
 BONUS! Creating line to SQL database blog
 
 ```
+
 INSERT INTO user(id,firstName,middleName,lastName,mobile,email)
 VALUES('089ddda5-f4c8-4bca-974a-e69d616e504a','Jaanus','','Alnek','23423424','jaanus@test.ee');
+
+```
 
 ```
