@@ -1,6 +1,7 @@
 import express from 'express';
 // import {Connection, ConnectionOptions, createConnection} from 'typeorm'
 const App = express();
+App.use(express.json());
 
 // export async function openDatabaseConnection(){
 // async function openDatabaseConnection(){
