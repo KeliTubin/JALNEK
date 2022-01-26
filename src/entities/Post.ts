@@ -24,7 +24,7 @@ export default class Post extends BaseEntity {
     metaTitle: string;
     @Column('tinytext')
     summary: string;
-    @Column()
+    @Column('boolean', {default: false})
     published: boolean;
     @Column('text')
     content: string;

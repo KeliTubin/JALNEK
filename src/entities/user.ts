@@ -37,8 +37,14 @@ export default class User extends BaseEntity {
     
 // COLUMN (SULGUDE SEES) ON SEADISTUSED, MIS GENEREERITAKSE 
 // HEIDIS BLOG ALLA TABELI VÄLJA VÄÄRTUSTE SEADISTUSEKS.
-    
-    @OneToMany(()=> Post, (post) => post.author, {nullable: true})
+
+//NB!
+// 1) LAZY LODAING (AKA ILMA EAGER: true) ANNAB KASUTAJA ANDMED 
+    /* @OneToMany(()=> Post, (post) => post.author)
+    posts: Post[]; */
+
+// 2) EAGER: true ANNAB KASUTAJA ANDMED KOOS BLOGI POSTITUSTEGA
+    @OneToMany(()=> Post, (post) => post.author, {eager: true})
     posts: Post[];
 
 
