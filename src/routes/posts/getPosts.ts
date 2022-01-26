@@ -1,6 +1,4 @@
-import { SSL_OP_ALLOW_UNSAFE_LEGACY_RENEGOTIATION } from "constants";
 import express from "express";
-import { deflateSync } from "zlib";
 import Post from "../../entities/Post";
 const router = express.Router();
 
@@ -25,11 +23,18 @@ router.get('/', async (req, res) => {
     //     .offset(Number.isSafeInteger(skip) ? Number.parseInt(skip as string) : 0)
     //     .getMany();
     
-
     // res.send(postForUser);
 
+        if (!posts) {
+            return res.send({message: 'no posts with given ID'});
+        }
+        return res.send(posts);
+    
     }   catch(error){
-       
+        return res.send({
+            error: 'VIGA getPosts.ts',
+            message: error.message
+        });
     }
     
 });

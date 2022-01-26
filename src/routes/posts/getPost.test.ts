@@ -3,9 +3,9 @@ import axios from "axios";
 const endpoint = 'http//localhost:3000/posts/';
 
 describe('get post by ID',()=>{
-    beforeAll(() => {
+    // beforeAll(() => {
 
-    });
+    // });
 
     it('should return post by ID', async () => {
 
@@ -24,7 +24,7 @@ describe('get post by ID',()=>{
         return;
     });
 
-    afterAll(() => {
+    // afterAll(() => {
 
-    });
+    // });
 });

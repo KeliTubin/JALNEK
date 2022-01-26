@@ -21,7 +21,7 @@ router.post('/', async (req, res)=>{
             email 
         } = req.body as UserInput;
 
-        // User SUURE TÄHEGA TULI user.ts FAILIST class VÄÄRTUSELT
+        // User SUURE TÄHEGA TULI User.ts FAILIST class VÄÄRTUSELT
         const user = new User();
         user.id = uuidv4();
         user.firstName = firstName;

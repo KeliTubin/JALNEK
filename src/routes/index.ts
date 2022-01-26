@@ -3,6 +3,7 @@ import express from 'express';
 import createUser from './user/createUser';
 import getUser from './user/getUser';
 import getUserS from './user/getUserS';
+import createPost from './posts/createPost'
 import getPost from './posts/getPost';
 import getPosts from './posts/getPosts';
 
@@ -13,7 +14,7 @@ const router = express.Router();
 //     userRoutes.push(file.substring(0, file.indexOf('.')));
 // });
 router.use('/users', [createUser, getUser, getUserS]);
-router.use('/posts', [getPost, getPosts])
+router.use('/posts', [createPost, getPost, getPosts])
 
 export default router;
 
