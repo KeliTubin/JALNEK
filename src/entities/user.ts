@@ -1,7 +1,16 @@
-import { BaseEntity, Column, CreateDateColumn, Entity, getConnection, PrimaryGeneratedColumn, UpdateDateColumn } from 'typeorm';
+import { 
+    BaseEntity, 
+    Column, 
+    CreateDateColumn, 
+    Entity, 
+    OneToMany, 
+    PrimaryGeneratedColumn, 
+    UpdateDateColumn 
+} from 'typeorm';
+import Post from './Post';
 
 @Entity()
-export class User extends BaseEntity {
+export default class User extends BaseEntity {
     [x: string]: any;
     @PrimaryGeneratedColumn('uuid')
     id: string;
@@ -25,14 +34,13 @@ export class User extends BaseEntity {
     createdAt: Date;
     @UpdateDateColumn()
     updatedAT: Date;
+    
 // COLUMN (SULGUDE SEES) ON SEADISTUSED, MIS GENEREERITAKSE 
 // HEIDIS BLOG ALLA TABELI VÄLJA VÄÄRTUSTE SEADISTUSEKS.
-    // save(){
-    //     return getConnection().getRepository('User').findOne(this);
-    // }
+    
+    @OneToMany(()=> Post, (post) => post.author, {nullable: true})
+    posts: Post[];
+
+
+
 }
-
-
-
-
-export default User;
