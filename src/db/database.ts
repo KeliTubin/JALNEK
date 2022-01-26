@@ -2,7 +2,7 @@ import { ConnectionOptions, createConnection } from 'typeorm'
 
 export async function openDatabaseConnection(){
 
-// ESIMESE KOOLIPÄEVA TUNNIS TEGIME NII JA TEISEL KOOLIPÄEVAL LIIKUS SEE ornconfig faili
+// ESIMESE KOOLIPÄEVA TUNNIS TEGIME NII JA TEISEL KOOLIPÄEVAL LIIKUS SEE ormconfig faili
     // await closeDatabaseConnection();
     // const options: ConnectionOptions ={
     //     type: 'mysql', 
