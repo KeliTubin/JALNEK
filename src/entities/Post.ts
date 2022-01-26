@@ -18,8 +18,8 @@ export default class Post extends BaseEntity {
     id!: string;
     @Column('varchar', {length: 75})
     title: string;
-    @JoinColumn()
-    authorId: string;
+    @Column()
+    authorId!: string;
     @Column('varchar', {length: 100})
     metaTitle: string;
     @Column('tinytext')
@@ -33,6 +33,8 @@ export default class Post extends BaseEntity {
     @UpdateDateColumn()
     updatedAt: Date;
 
-    @ManyToOne(() => User, (user)=> user.post)
-    author: User;
+    @ManyToOne(() => User, (user)=> user.posts, {
+        createForeignKeyConstraints: true
+    })
+    author: Promise<User>;
 }

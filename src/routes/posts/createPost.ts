@@ -23,7 +23,7 @@ router.post('/', async (req, res) => {
     
         const post = Post.create({
             id: uuidv4(),
-            authorId: authorId,
+            authorId: user.id,
             title: title,
             metaTitle: title.replace(/\s/g,'-'),
             summary: summary,
