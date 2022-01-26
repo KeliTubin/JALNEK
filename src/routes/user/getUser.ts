@@ -8,12 +8,12 @@ router.get('/:id', async (req, res)=> {
         const {id} = req.params;
         const user = await User.findOne({id: id});
         if (!user){
-            return res.send({message: 'no user with given ID'});
+            return res.json({message: 'no user with given ID'});
         }
 
-        return res.send(user);
+        return res.json(user);
     }   catch (error) {
-        return res.send({
+        return res.json({
             error: 'VIGA getUser.ts',
             message: error.message
         });

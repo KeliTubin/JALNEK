@@ -4,37 +4,40 @@ const router = express.Router();
 
 router.get('/', async (req, res) => {
     try{
-        const {skip, take} = req.query;
+        const {userId, skip, take} = req.query;
 
 // ÜKS VARIANT POST FIND
-        const posts = await Post.find({
+/*         const posts = await Post.find({
             take: Number.isSafeInteger(take) ? Number.parseInt(take as string) : 20,
             skip: Number.isSafeInteger(skip) ? Number.parseInt(skip as string) : 0,
             order: {
                 createdAt: 'DESC'
             }
-        });
+        }); */
 
 // TEINE VARIANT QUERY BUILDER
-    //     console.log(...posts)
-    //     const postForUser = await Post.createQueryBuilder('post')
-    //     .innerJoin('post.author', 'author')
-    //     .limit(Number.isSafeInteger(take) ? Number.parseInt(take as string) : 20)
-    //     .offset(Number.isSafeInteger(skip) ? Number.parseInt(skip as string) : 0)
-    //     .getMany();
-    
-    // res.send(postForUser);
+        // console.log(...posts)
+        const postsQuery = Post.createQueryBuilder('post')
+            .innerJoinAndSelect('post.author', 'author')
+            .limit(Number.isSafeInteger(take) ? Number.parseInt(take as string) : 20)
+            .offset(Number.isSafeInteger(skip) ? Number.parseInt(skip as string) : 0);
 
-        if (!posts) {
-            return res.send({message: 'no posts with given ID'});
+        if(userId != undefined) {
+            postsQuery.where('id = :userId', {userId: userId});
         }
-        return res.send(posts);
+
+        const posts = await postsQuery.getMany();
+
+        return res.json({posts: posts});
     
     }   catch(error){
-        return res.send({
-            error: 'VIGA getPosts.ts',
-            message: error.message
-        });
+        if (error instanceof Error) {
+            return res.json({
+                error: 'VIGA getPosts.ts',
+                message: error.message
+            });
+        }
+        
     }
     
 });

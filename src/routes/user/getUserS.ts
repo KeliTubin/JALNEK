@@ -13,12 +13,12 @@ router.get('/', async (req, res)=> {
         });
 
         if (!users){
-            return res.send({message: 'no users with given ID'});
+            return res.json({message: 'no users with given ID'});
         }
 
-        return res.send(users);
+        return res.json(users);
     }   catch (error) {
-        return res.send({
+        return res.json({
             error: 'VIGA getUserS.ts',
             message: error.message
         });

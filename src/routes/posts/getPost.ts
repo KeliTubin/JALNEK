@@ -9,14 +9,14 @@ router.get('/:id', async (req, res) => {
         const post = await Post.findOne({id: id});
 
         if(!post){
-            return res.send({
+            return res.json({
                 message: 'no post with given ID'
             })
         }
-        return res.send(post);
+        return res.json(post);
     }   catch(error){
         if (error instanceof Error){
-            return res.send({
+            return res.json({
                 error: 'VIGA getPost.ts',
                 message: error.message
             });

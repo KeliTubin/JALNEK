@@ -18,7 +18,7 @@ router.post('/', async (req, res) => {
     
         const user = await User.findOne({id: authorId});
         if(!user) {
-            return res.send({message: 'No user found. Can not post.'});
+            return res.json({message: 'No user found. Can not post.'});
         }
     
         const post = Post.create({
@@ -37,17 +37,17 @@ router.post('/', async (req, res) => {
 
             console.log({error: 'No user found. Can not post.'});
 
-            return res.send({
+            return res.json({
                 error: 'Unable to create new post (createPost.ts)',
                 message: 'typeorm save'
             });
         }   
 
-        return res.send(newPost);
+        return res.json(newPost);
     }   catch(error){
         console.log('Unknow database error createPost.ts');
         if(error instanceof Error) {
-            return res.send({
+            return res.json({
                 error: 'Unable to create new post (createPost.ts)',
                 message: error.message
             });

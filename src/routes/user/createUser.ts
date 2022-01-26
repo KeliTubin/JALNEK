@@ -35,16 +35,16 @@ router.post('/', async (req, res)=>{
             throw new Error();
         }
         
-        return res.send(newUser);
+        return res.json(newUser);
     }   catch(error){
         if (error instanceof Error) {
-            return res.send({
+            return res.json({
                 error: 'Unable to create new user', 
                 message: error.message
             });
         }
         
-        return res.send({
+        return res.json({
             error: 'VIGA createUser.ts',
             message: error.message
         });
