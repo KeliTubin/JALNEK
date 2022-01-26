@@ -13,7 +13,6 @@ yarn global add nodemon
 3 Typescript install
 
 ```
-
 yarn global add typescript
 
 ```
@@ -21,7 +20,6 @@ yarn global add typescript
 4 tsc install
 
 ```
-
 yarn tsc --init
 
 ```
@@ -29,7 +27,6 @@ yarn tsc --init
 5 ts-node install
 
 ```
-
 yarn add ts-node --dev
 
 ```
@@ -37,7 +34,6 @@ yarn add ts-node --dev
 6 Node types install
 
 ```
-
 yarn add @types/node
 
 ```
@@ -53,7 +49,6 @@ yarn add express
 8 express types install
 
 ```
-
 yarn add @types/express
 
 ```
@@ -61,7 +56,6 @@ yarn add @types/express
 9 TypeORM install
 
 ```
-
 yarn add typeorm
 
 ```
@@ -69,7 +63,6 @@ yarn add typeorm
 10 mySQL install
 
 ```
-
 yarn add mysql
 
 ```
@@ -78,8 +71,6 @@ yarn add mysql
 
 ```
 yarn add uuid
-
-
 ```
 
 12 UUID types install
@@ -87,14 +78,12 @@ yarn add uuid
 ```
 yarn add @types/uuid
 
-
 ```
 
 13 JESTJS install (testing tool)
 
 ```
 yarn add --dev jest
-
 
 ```
 
@@ -104,7 +93,6 @@ NB! You need install Jest extension in Visual Studio!
 
 ```
 yarn add @types/jest
-
 
 ```
 
@@ -116,6 +104,7 @@ yarn add @babel/preset-typescript --dev
 ```
 
 16 Babel preset for JavaScript install
+
 ```
 yarn add @babel/preset-env
 
@@ -129,6 +118,7 @@ yarn add @babel/core@⌃7.0.0-0 --dev
 ```
 
 18 Axios install
+
 ```
 yarn add axios
 ```
@@ -147,7 +137,6 @@ yarn test -- src/test/sum
 
 ```
 
-
 START SERVER
 
 ```
@@ -158,7 +147,6 @@ Postman tool download
 
 ```
 https://www.postman.com/downloads/
-
 
 ```
 
