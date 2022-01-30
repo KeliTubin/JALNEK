@@ -6,6 +6,9 @@ import getUserS from './user/getUserS';
 import createPost from './posts/createPost'
 import getPost from './posts/getPost';
 import getPosts from './posts/getPosts';
+import createComment from './comments/createComment';
+import getComment from './comments/getComment';
+import getComments from './comments/getComments'
 
 const router = express.Router();
 // var userRoutes: String[] = [];
@@ -14,12 +17,7 @@ const router = express.Router();
 //     userRoutes.push(file.substring(0, file.indexOf('.')));
 // });
 router.use('/users', [createUser, getUser, getUserS]);
-router.use('/posts', [createPost, getPost, getPosts])
+router.use('/posts', [createPost, getPost, getPosts]);
+router.use('/comments', [createComment, getComment, getComments]);
 
 export default router;
-
-
-
-
-
-

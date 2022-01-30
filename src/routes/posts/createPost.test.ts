@@ -6,9 +6,9 @@ describe('create post',()=>{
 
     it('create new post succesfully', async () => {
         const testData = {
-                authorId: '089ddda5-f4c8-4bca-974a-e69d616e505a',
-                title: 'Automated blog test',
-                summary: 'kiiremini kõrgemale kaugemale',
+                authorId: 'f7092f6d-b24e-4fd2-9013-c565a3d62f4b',
+                title: 'Automated test blog',
+                summary: 'kaugemale kõrgemale kiiremini',
                 content: 'Komponenttestid (unit testid) testitakse süsteemi üksikuid komponente. Eesmärk on kinnitada, et süsteemi koodi kõik komponendid toimivad ootuspäraselt. Komponenttestimine (unit testimine) toimub süsteemi väljatöötamise (süsteemi koodi kirjutamise etapis) arendajate poolt. Komponenttestid (unit testid) eraldavad süsteemi koodi osa ja testid, mis kontrollivad süsteemi koodi ootuspärasust. Komponent võib olla individuaalne funktsioon, meetod, protseduur, moodul või objekt.'  
         };
 

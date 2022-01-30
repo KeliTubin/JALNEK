@@ -10,10 +10,10 @@ describe('get post by ID',()=>{
     it('should return post by ID', async () => {
 
         const response = await axios.get(
-            endpoint + '/089ddda5-f4c8-4bca-974a-e69d616post1'
+            endpoint + '/e8145ea7-5c29-4a4e-8ce4-ada817e99c9e'
         );
         expect(response?.data).toHaveProperty('id');
-        expect(response?.data?.title).toEqual('Title for a random post')
+        expect(response?.data?.title).toEqual('Saabuv lumesadu ja tuisk muudavad liiklemise ohtlikuks')
     });
 
     it('should return error for no ID', async () =>{
