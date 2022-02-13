@@ -1,8 +1,23 @@
 import express from 'express';
 import router from './routes/index';
+import helmet from 'helmet';
+// import cors from 'cors';
 // import {Connection, ConnectionOptions, createConnection} from 'typeorm'
 const App = express();
 App.use(express.json());
+// App.use(cors());
+// App.use(helmet({
+//     crossOriginOpenerPolicy: {
+//         policy: 'cross-origin',
+//     }
+// }));
+
+App.use(router);
+App.get('/',(req, res)=>{
+    res.json({message: 'Hello'});
+});
+
+export = App;
 
 // export async function openDatabaseConnection(){
 // async function openDatabaseConnection(){
@@ -26,9 +41,3 @@ App.use(express.json());
 // openDatabaseConnection()
 
 // App.get('/users', async (req, res) =>{});
-App.use(router);
-App.get('/',(req, res)=>{
-    res.json({message: 'Hello'});
-});
-
-export = App;

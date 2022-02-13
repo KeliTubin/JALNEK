@@ -123,6 +123,28 @@ yarn add @babel/core@⌃7.0.0-0 --dev
 yarn add axios
 ```
 
+19 Helmet install
+
+```
+yarn add helmet
+```
+20 Cors types install
+
+```
+yarn add @types/cors
+```
+21 Bunyan install
+
+```
+yarn add bunyan 
+```
+22 Bunyan types install
+
+```
+yarn add @types/bunyann
+```
+
+
 TESTING (Jest testing tool)
 Test multiple files with one run JEST
 

@@ -3,10 +3,14 @@ import {
     Column, 
     CreateDateColumn, 
     Entity, 
+    JoinTable, 
+    ManyToMany, 
     ManyToOne, 
+    OneToMany, 
     PrimaryGeneratedColumn, 
     UpdateDateColumn 
 } from "typeorm";
+import Category from "./Category";
 
 import User from "./User";
 
@@ -19,6 +23,8 @@ export default class Post extends BaseEntity {
     title: string;
     @Column()
     authorId!: string;
+    @Column('uuid', {nullable: true})
+    parentId!: string;
     @Column('varchar', {length: 100})
     metaTitle: string;
     @Column('tinytext')
@@ -36,4 +42,13 @@ export default class Post extends BaseEntity {
         createForeignKeyConstraints: true
     })
     author: Promise<User>;
+
+    @OneToMany(() => Post, (post) => post.parentId, {
+        createForeignKeyConstraints: true
+    })
+    parentPost?: Promise<User>;
+
+    @ManyToMany(() => Category)
+    @JoinTable()
+    categories: Category[];
 }
