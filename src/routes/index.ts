@@ -3,6 +3,7 @@ import express from 'express';
 import createUser from './user/createUser';
 import getUser from './user/getUser';
 import getUserS from './user/getUserS';
+import deleteUser from './user/deleteUser';
 import createPost from './posts/createPost'
 import getPost from './posts/getPost';
 import getPosts from './posts/getPosts';
@@ -16,7 +17,7 @@ const router = express.Router();
 // fs.readdirSync(__dirname + '/user').forEach(function(file){
 //     userRoutes.push(file.substring(0, file.indexOf('.')));
 // });
-router.use('/users', [createUser, getUser, getUserS]);
+router.use('/users', [createUser, getUser, getUserS, deleteUser]);
 router.use('/posts', [createPost, getPost, getPosts]);
 router.use('/comments', [createComment, getComment, getComments]);
 

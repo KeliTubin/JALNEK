@@ -5,11 +5,28 @@ import {
     Entity, 
     OneToMany, 
     PrimaryGeneratedColumn, 
-    UpdateDateColumn 
+    UpdateDateColumn,
+    DeleteDateColumn 
 } from 'typeorm';
 import Post from './Post';
 
+type UserInfo ={
+    id: string,
+    firstName: string,
+    middleName: string,
+    lastName: string,
+    mobile: string,
+    email: string,
+    intro: string,
+    profile?: string,
+    createdAt: Date,
+    updatedAt: Date
+  }
+
+// Dekoraator käsk, mis ütleb Typeormile, et tegemist on entity ehk
+// andmebaasi objekti kirjeldusega
 @Entity()
+
 export default class User extends BaseEntity {
     [x: string]: any;
     @PrimaryGeneratedColumn('uuid')
@@ -27,13 +44,20 @@ export default class User extends BaseEntity {
     @Column({default: ()=> 'CURRENT_TIMESTAMP'})
     lastLogin: Date;
     @Column('tinytext', {nullable: true})
-    intro: string;
+    intro?: string;
     @Column('text', {nullable: true})
     profile: string;
+
+    fullName: string;
+
+    @DeleteDateColumn()
+    deleteAt: boolean;
+
     @CreateDateColumn()
     createdAt: Date;
     @UpdateDateColumn()
     updatedAT: Date;
+ 
     
 // COLUMN (SULGUDE SEES) ON SEADISTUSED, MIS GENEREERITAKSE 
 // HEIDIS BLOG ALLA TABELI VÄLJA VÄÄRTUSTE SEADISTUSEKS.
@@ -44,9 +68,25 @@ export default class User extends BaseEntity {
     posts: Post[]; */
 
 // 2) EAGER: true ANNAB KASUTAJA ANDMED KOOS BLOGI POSTITUSTEGA
+    
     @OneToMany(()=> Post, (post) => post.author, {eager: true})
     posts: Post[];
 
-
+    UserInfo() {
+        return {
+            id: this.id,
+            firstName: this.firstName,
+            middleName: this.middleName ?? '',
+            lastName: this.lastName,
+            fullName: this.firstName + ' ' + this.lastName, 
+            email: this.email,
+            mobile: this.mobile,
+            intro: this.intro ?? '',
+            profile: this.profile ?? '',
+            posts: this.posts,
+            createdAt: this.createdAt,
+            updatedAt: this.updatedAt
+        }
+    }
 
 }

@@ -1,8 +1,9 @@
 import express from "express";
-import { getConnection } from "typeorm";
+import { userInfo } from "os";
 import User from "../../entities/User";
 const router = express.Router();
 
+// Find user by ID
 router.get('/:id', async (req, res)=> {
     try{
         const {id} = req.params;
@@ -11,7 +12,7 @@ router.get('/:id', async (req, res)=> {
             return res.json({message: 'no user with given ID'});
         }
 
-        return res.json(user);
+        return res.json(userInfo);
     }   catch (error) {
         return res.json({
             error: 'VIGA getUser.ts',
