@@ -11,7 +11,7 @@ import {
     UpdateDateColumn 
 } from "typeorm";
 import Category from "./Category";
-
+import Tag from "./Tag";
 import User from "./User";
 
 @Entity()
@@ -41,8 +41,9 @@ export default class Post extends BaseEntity {
     @ManyToOne(() => User, (user)=> user.posts, {
         createForeignKeyConstraints: true
     })
-    author: Promise<User>;
+    author!: Promise<User>;
 
+// Parent post
     @OneToMany(() => Post, (post) => post.parentId, {
         createForeignKeyConstraints: true
     })
@@ -50,5 +51,9 @@ export default class Post extends BaseEntity {
 
     @ManyToMany(() => Category)
     @JoinTable()
-    categories: Category[];
+    categories!: Category[];
+
+    @ManyToMany(() => Tag)
+    @JoinTable()
+    tag!: Tag[];
 }

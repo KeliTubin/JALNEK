@@ -3,17 +3,19 @@ import {
     Column, 
     CreateDateColumn, 
     Entity, 
-    ManyToMany,  
+    ManyToMany, 
+    ManyToOne, 
+    OneToMany, 
     PrimaryGeneratedColumn, 
     UpdateDateColumn, 
 } from "typeorm";
 import Post from "./Post";
-import USer from "./User";
+import User from "./User";
 
 
 
 @Entity()
-export default class Category extends BaseEntity {
+export default class Tag extends BaseEntity {
     @PrimaryGeneratedColumn('uuid')
     id!: string;
     @Column('varchar', {length: 75})
